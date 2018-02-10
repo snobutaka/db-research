@@ -16,6 +16,7 @@ public class MySqlDbAccess implements DbAccess {
         return DriverManager.getConnection(url.toString(), "root", "root");
     }
 
+    @Override
     public void createTable(Connection conn) throws SQLException {
         StringBuilder createTable = new StringBuilder();
         createTable.append("CREATE TABLE test_db.test_table (");
@@ -36,7 +37,7 @@ public class MySqlDbAccess implements DbAccess {
             try {
                 value = generatedKeys.getString(2);
             } catch (SQLException e) {
-                // Ignore
+                e.printStackTrace();
             }
             return new Data(id, value);
         } else {

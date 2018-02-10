@@ -16,6 +16,7 @@ public class PostgreSqlDbAccess implements DbAccess {
         return DriverManager.getConnection(url.toString(), "postgres", "");
     }
 
+    @Override
     public void createTable(Connection conn) throws SQLException {
         conn.prepareStatement("CREATE SEQUENCE test_seq START 1").executeUpdate();
 
