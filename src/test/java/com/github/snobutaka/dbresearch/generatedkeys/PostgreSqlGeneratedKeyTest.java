@@ -48,7 +48,7 @@ public class PostgreSqlGeneratedKeyTest {
     }
 
     @Test
-    public void test() throws Exception {
+    public void testUpdate() throws Exception {
         PostgreSqlDbAccess postgresAccess = new PostgreSqlDbAccess();
         try (Connection conn = postgresAccess.getConnection(
                 postgres.getContainerIpAddress(), postgres.getMappedPort(port))) {
